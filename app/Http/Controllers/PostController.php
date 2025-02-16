@@ -12,6 +12,7 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         return response()->json($post);
     }
+
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
