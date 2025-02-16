@@ -9,3 +9,9 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/products', [\App\Http\Controllers\ProductController::class, 'store']);
 Route::get('/products/{id}', [\App\Http\Controllers\ProductController::class, 'show']);
+
+// Add Soft Delete test
+Route::get('/posts/{id}', [\App\Http\Controllers\PostController::class, 'show']);
+Route::delete('/posts/{id}', [\App\Http\Controllers\PostController::class, 'destroy']);
+Route::patch('/posts/{id}/restore', [\App\Http\Controllers\PostController::class, 'restore']);
+Route::delete('/posts/{id}/force-delete', [\App\Http\Controllers\PostController::class, 'forceDelete']);
